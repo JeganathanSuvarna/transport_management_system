@@ -94,7 +94,7 @@ body {
   line-height: 1.5;
   color: #525f7f;
   text-align: left;
-  background-color: #1e1e2f;
+  background-color: #3b5e67;
 }
 
 [tabindex="-1"]:focus {
@@ -1839,7 +1839,7 @@ pre code {
   padding: 0.5rem 0.7rem;
   font-size: 0.875rem;
   line-height: 1.428571;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   background-color: transparent;
   background-clip: padding-box;
   border: 1px solid #cad1d7;
@@ -1860,7 +1860,7 @@ pre code {
 }
 
 .form-control:focus {
-  color: rgba(255, 255, 255, 0.8);
+  color:black;
   background-color: #ffffff;
   border-color: rgba(50, 151, 211, 0.25);
   outline: 0;
@@ -2186,7 +2186,7 @@ textarea.form-control {
 
 .was-validated .form-check-input:invalid~.form-check-label,
 .form-check-input.is-invalid~.form-check-label {
-  color: #ff8d72;
+  color: white;
 }
 
 .was-validated .form-check-input:invalid~.invalid-feedback,
@@ -2198,7 +2198,7 @@ textarea.form-control {
 
 .was-validated .custom-control-input:invalid~.custom-control-label,
 .custom-control-input.is-invalid~.custom-control-label {
-  color: #ff8d72;
+  color: white;
 }
 
 .was-validated .custom-control-input:invalid~.custom-control-label::before,
@@ -2362,8 +2362,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #e14eca;
-  border-color: #e14eca;
+  /* background-color: #e14eca; */
+  /* border-color: #e14eca; */
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
@@ -4753,7 +4753,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #ffffff;
+  background-color: white;
   background-clip: border-box;
   border: 0.0625rem solid rgba(34, 42, 66, 0.05);
   border-radius: 0.2857rem;
@@ -10695,14 +10695,9 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 }
 
 .btn-primary {
-  background: #e14eca;
-  background-image: -webkit-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
-  background-image: -o-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
-  background-image: -moz-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
-  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+ 
   background-size: 210% 210%;
   background-position: top right;
-  background-color: #e14eca;
   transition: all 0.15s ease;
   box-shadow: none;
   color: #ffffff;
@@ -12310,9 +12305,10 @@ fieldset[disabled] .btn-link.active {
 }
 
 .form-control:focus {
-  border-color: #e14eca;
+  /* border-color: #e14eca; */
   background-color: transparent;
   box-shadow: none;
+  color:white;
 }
 
 .form-control:focus+.input-group-append .input-group-text,
@@ -15320,7 +15316,7 @@ table.tablesorter thead tr .headerSortDown {
   width: 100%;
   min-height: 100vh;
   border-top: 2px solid #e14eca;
-  background: linear-gradient(#1e1e2f, #1e1e24);
+  /* background: linear-gradient(#1e1e2f, #1e1e24); */
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -17784,7 +17780,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .login-page .card-login.card-white .card-header .card-title {
-  color: #ffffff;
+  color: black;
 }
 
 .login-page .card-login .card-header .card-title {
@@ -17792,7 +17788,6 @@ Copyright (c) 2015 Daniel Eden
   font-size: 5em;
   font-weight: 900;
   color: #222a42;
-  text-transform: lowercase;
   margin-left: -5px;
   z-index: 1;
 }
@@ -17840,7 +17835,6 @@ Copyright (c) 2015 Daniel Eden
   font-size: 5em;
   font-weight: 900;
   color: #222a42;
-  text-transform: lowercase;
   margin-left: -5px;
   z-index: 1;
 }
