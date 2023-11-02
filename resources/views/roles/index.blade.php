@@ -10,11 +10,19 @@
                         <div class="col-8">
                             <h4 class="card-title">Roles & Permissions</h4>
                         </div>
+                        @php
+            $role_name=Auth::user()->getRoleNames()[0];
+            $role_per=Spatie\Permission\Models\Role::where('name',$role_name)->first();
+            @endphp
                         <div class="col-4 text-right">
+                        @if($role_per->hasPermissionTo('Add-Role'))
+
                             <a href="" class="btn btn-sm btn-primary addRole">Add Role</a>
+                            @endif
                         </div>
                     </div>
                 </div>
+               
                 <div class="card-body">
 
                     <div class="">
@@ -33,13 +41,21 @@
                                     <td>
                                         {{$role->name}}
                                     </td>
-                                    <td>
+                                    <td>           
+                                         @if($role_per->hasPermissionTo('Edit-Role'))
+
                                         <button type="button" class="btn btn-warning edit" data-id="{{$role->id}}">Edit</button>
+                                      
                                         @if($role->status==1)
                                         <button type="button" class="btn btn-danger enable" data-id="{{$role->id}}">Enable</button>
                                         @else
                                         <button type="button" class="btn btn-primary disable" data-id="{{$role->id}}">Disable</button>
 
+                                        @endif
+                                        @endif
+                                        @if($role_per->hasPermissionTo('Assign-Permissions'))
+
+                                        <a href="/permission/{{$role->id}}"><button type="button" class="btn btn-success">Permission</button></a>
                                         @endif
                                     </td>
                                 </tr>

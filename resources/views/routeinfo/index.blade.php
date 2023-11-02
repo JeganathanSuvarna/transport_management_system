@@ -12,12 +12,12 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Bus Informations</h4>
+                            <h4 class="card-title">Route Informations</h4>
                         </div>
                         <div class="col-4 text-right">
-                        @if($role->hasPermissionTo('Create-busdata'))
+                        @if($role->hasPermissionTo('Create-routedata'))
 
-                            <a href="/bus-info/create" class="btn btn-sm btn-primary">Add Bus Info</a>
+                            <a href="/route-info/create" class="btn btn-sm btn-primary">Add Route Info</a>
                             @endif
                         </div>
                     </div>
@@ -26,36 +26,40 @@
 
                     <div class="">
                         <table class="table tablesorter " id="">
-                            <thead>
+                            <thead class="">
                                 <tr>
-                                    <th scope="col" style="width:10%">#</th>
-                                    <th scope="col" style="width:20%">Bus Name</th>
-                                    <th scope="col" style="width:20%">Bus Number</th>
-                                    <th scope="col" style="width:20%">Capacity</th>
+                                    <th scope="col" style="width:1%">#</th>
+                                    <th scope="col" style="width:20%">Route Name</th>
+                                    <th scope="col" style="width:20%">Starting Point</th>
+                                    <th scope="col" style="width:20%">End Point</th>
+                                    <th scope="col" style="width:10%">Distance</th>
                                     <th scope="col" style="width:30%">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($busInformations as $key=>$busInfo)
+                                @foreach($routeInformations as $key=>$routeInfo)
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>
-                                        {{$busInfo->name}}
+                                        {{$routeInfo->route_name}}
                                     </td>
                                     <td>
-                                        {{$busInfo->bus_no}}
+                                        {{$routeInfo->start_point}}
                                     </td>
                                     <td>
-                                        {{$busInfo->capacity}}
+                                        {{$routeInfo->end_point}}
+                                    </td>
+                                    <td>
+                                        {{$routeInfo->distance}}
                                     </td>
                                     <td>
                                     @if($role->hasPermissionTo('Edit-busdata'))
 
-                                        <a href="/bus-info/{{$busInfo->id}}/edit"><button type="button" class="btn btn-warning">Edit</button></a>
+                                        <a href="/route-info/{{$routeInfo->id}}/edit"><button type="button" class="btn btn-warning">Edit</button></a>
                                        @endif
                                        @if($role->hasPermissionTo('Delete-busdata'))
 
-                                        <button type="button" class="btn btn-primary delete" data-id="{{$busInfo->id}}">Delete</button>
+                                        <button type="button" class="btn btn-primary delete" data-id="{{$routeInfo->id}}">Delete</button>
                                         @endif
 
                                     </td>

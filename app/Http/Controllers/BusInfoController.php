@@ -105,14 +105,13 @@ class BusInfoController extends Controller
             $request->all(),
             [
                 'name'                 => 'required|max:255',
-                'bus_no'              => 'required|unique:bus_infos',
+                'bus_no'              => 'required',
                 'capacity'              => 'required',
 
             ],
             [
                 'name.required'                 => 'Bus Name is required',
                 'bus_no.required'              => 'Bus Number is required',
-                'bus_no.unique'              => 'Bus Number is alreday taken',
                 'capacity.required'              => 'Capacity is required',
 
 

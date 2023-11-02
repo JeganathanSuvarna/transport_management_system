@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bus extends Model
+class Route extends Model
 {
     use HasFactory;
 
-    protected $table="bus_infos";
+    protected $table='route_infos';
 
     protected $fillable=[
-        'name',
-        'bus_no',
-        'capacity'
+        'route_name',
+        'start_point',
+        'end_point',
+        'distance'
     ];
+
     public function schedules()
     {
         return $this->hasMany(Schedule::class);

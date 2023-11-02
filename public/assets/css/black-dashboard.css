@@ -85,6 +85,9 @@ nav,
 section {
   display: block;
 }
+.form-control:focus{
+  color:black !important;
+}
 
 body {
   margin: 0;
@@ -1839,7 +1842,7 @@ pre code {
   padding: 0.5rem 0.7rem;
   font-size: 0.875rem;
   line-height: 1.428571;
-  color: white;
+  color: black;
   background-color: transparent;
   background-clip: padding-box;
   border: 1px solid #cad1d7;
@@ -1861,7 +1864,7 @@ pre code {
 
 .form-control:focus {
   color:black;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   border-color: rgba(50, 151, 211, 0.25);
   outline: 0;
   box-shadow: none, none;
@@ -1879,7 +1882,7 @@ pre code {
 }
 
 select.form-control:focus::-ms-value {
-  color: rgba(255, 255, 255, 0.8);
+  color:black;
   background-color: transparent;
 }
 
@@ -12543,7 +12546,7 @@ img {
 .modal.modal-default .form-control:focus {
   border-color: #ffffff;
   background-color: transparent;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-default .has-success:after,
@@ -12672,18 +12675,18 @@ img {
 
 .modal.modal-primary .form-control {
   border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .form-control:focus {
-  border-color: #ffffff;
+  border-color: black;
   background-color: transparent;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .has-success:after,
 .modal.modal-primary .has-danger:after {
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .has-danger .form-control {
@@ -12698,20 +12701,20 @@ img {
 .modal.modal-primary .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .input-group-focus .input-group-prepend .input-group-text,
 .modal.modal-primary .input-group-focus .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: black;
+  color: black;
 }
 
 .modal.modal-primary .form-group.no-border .form-control,
 .modal.modal-primary .input-group.no-border .form-control {
   background-color: rgba(30, 30, 47, 0.2);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .form-group.no-border .form-control:focus,
@@ -12721,7 +12724,7 @@ img {
 .modal.modal-primary .input-group.no-border .form-control:active,
 .modal.modal-primary .input-group.no-border .form-control:active {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .form-group.no-border .form-control+.input-group-prepend .input-group-text,
@@ -12744,7 +12747,7 @@ img {
 .modal.modal-primary .input-group.no-border .form-control+.input-group-append .input-group-text:active,
 .modal.modal-primary .input-group.no-border .form-control+.input-group-append .input-group-text:active {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .form-group.no-border .form-control:focus+.input-group-prepend .input-group-text,
@@ -12752,7 +12755,7 @@ img {
 .modal.modal-primary .input-group.no-border .form-control:focus+.input-group-prepend .input-group-text,
 .modal.modal-primary .input-group.no-border .form-control:focus+.input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .form-group.no-border .input-group-prepend .input-group-text,
@@ -12761,7 +12764,7 @@ img {
 .modal.modal-primary .input-group.no-border .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.2);
   border: none;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-primary .form-group.no-border.input-group-focus .input-group-prepend .input-group-text,
@@ -12769,12 +12772,12 @@ img {
 .modal.modal-primary .input-group.no-border.input-group-focus .input-group-prepend .input-group-text,
 .modal.modal-primary .input-group.no-border.input-group-focus .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .modal-content {
   background-color: #fd5d93;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .modal-body p {
@@ -12807,18 +12810,18 @@ img {
 
 .modal.modal-danger .form-control {
   border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .form-control:focus {
-  border-color: #ffffff;
+  border-color: black;
   background-color: transparent;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .has-success:after,
 .modal.modal-danger .has-danger:after {
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .has-danger .form-control {
@@ -12833,20 +12836,20 @@ img {
 .modal.modal-danger .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .input-group-focus .input-group-prepend .input-group-text,
 .modal.modal-danger .input-group-focus .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: black;
+  color: black;
 }
 
 .modal.modal-danger .form-group.no-border .form-control,
 .modal.modal-danger .input-group.no-border .form-control {
   background-color: rgba(30, 30, 47, 0.2);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .form-group.no-border .form-control:focus,
@@ -12856,7 +12859,7 @@ img {
 .modal.modal-danger .input-group.no-border .form-control:active,
 .modal.modal-danger .input-group.no-border .form-control:active {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .form-group.no-border .form-control+.input-group-prepend .input-group-text,
@@ -12879,7 +12882,7 @@ img {
 .modal.modal-danger .input-group.no-border .form-control+.input-group-append .input-group-text:active,
 .modal.modal-danger .input-group.no-border .form-control+.input-group-append .input-group-text:active {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .form-group.no-border .form-control:focus+.input-group-prepend .input-group-text,
@@ -12887,7 +12890,7 @@ img {
 .modal.modal-danger .input-group.no-border .form-control:focus+.input-group-prepend .input-group-text,
 .modal.modal-danger .input-group.no-border .form-control:focus+.input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .form-group.no-border .input-group-prepend .input-group-text,
@@ -12896,7 +12899,7 @@ img {
 .modal.modal-danger .input-group.no-border .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.2);
   border: none;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-danger .form-group.no-border.input-group-focus .input-group-prepend .input-group-text,
@@ -12904,12 +12907,12 @@ img {
 .modal.modal-danger .input-group.no-border.input-group-focus .input-group-prepend .input-group-text,
 .modal.modal-danger .input-group.no-border.input-group-focus .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .modal-content {
   background-color: #ff8d72;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .modal-body p {
@@ -12942,18 +12945,18 @@ img {
 
 .modal.modal-warning .form-control {
   border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .form-control:focus {
-  border-color: #ffffff;
+  border-color: black;
   background-color: transparent;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .has-success:after,
 .modal.modal-warning .has-danger:after {
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .has-danger .form-control {
@@ -12968,20 +12971,20 @@ img {
 .modal.modal-warning .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .input-group-focus .input-group-prepend .input-group-text,
 .modal.modal-warning .input-group-focus .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: black;
+  color: black;
 }
 
 .modal.modal-warning .form-group.no-border .form-control,
 .modal.modal-warning .input-group.no-border .form-control {
   background-color: rgba(30, 30, 47, 0.2);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .form-group.no-border .form-control:focus,
@@ -12991,7 +12994,7 @@ img {
 .modal.modal-warning .input-group.no-border .form-control:active,
 .modal.modal-warning .input-group.no-border .form-control:active {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .form-group.no-border .form-control+.input-group-prepend .input-group-text,
@@ -13014,7 +13017,7 @@ img {
 .modal.modal-warning .input-group.no-border .form-control+.input-group-append .input-group-text:active,
 .modal.modal-warning .input-group.no-border .form-control+.input-group-append .input-group-text:active {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .form-group.no-border .form-control:focus+.input-group-prepend .input-group-text,
@@ -13022,7 +13025,7 @@ img {
 .modal.modal-warning .input-group.no-border .form-control:focus+.input-group-prepend .input-group-text,
 .modal.modal-warning .input-group.no-border .form-control:focus+.input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .form-group.no-border .input-group-prepend .input-group-text,
@@ -13031,7 +13034,7 @@ img {
 .modal.modal-warning .input-group.no-border .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.2);
   border: none;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-warning .form-group.no-border.input-group-focus .input-group-prepend .input-group-text,
@@ -13039,12 +13042,12 @@ img {
 .modal.modal-warning .input-group.no-border.input-group-focus .input-group-prepend .input-group-text,
 .modal.modal-warning .input-group.no-border.input-group-focus .input-group-append .input-group-text {
   background-color: rgba(30, 30, 47, 0.3);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-success .modal-content {
   background-color: #00f2c3;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-success .modal-body p {
@@ -13077,18 +13080,18 @@ img {
 
 .modal.modal-success .form-control {
   border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-success .form-control:focus {
-  border-color: #ffffff;
+  border-color: black;
   background-color: transparent;
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-success .has-success:after,
 .modal.modal-success .has-danger:after {
-  color: #ffffff;
+  color: black;
 }
 
 .modal.modal-success .has-danger .form-control {
@@ -14168,7 +14171,7 @@ hr {
 }
 
 .table>tbody>tr>td {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color:black !important;
 }
 
 .table>tbody>tr>td .photo {
@@ -14256,7 +14259,7 @@ hr {
   text-transform: uppercase;
   font-weight: 700;
   border: 0;
-  color: rgba(255, 255, 255, 0.7);
+  /* color: rgba(255, 255, 255, 0.7); */
 }
 
 .table .radio,
@@ -17246,7 +17249,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card {
-  background: #27293d;
+  background: white;
   border: 0;
   position: relative;
   width: 100%;
@@ -17255,7 +17258,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card label {
-  color: rgba(255, 255, 255, 0.6);
+  color:black;
 }
 
 .card .card-title {
@@ -17272,7 +17275,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-body .card-title {
-  color: #ffffff;
+  color: black;
   text-transform: inherit;
   font-weight: 300;
   margin-bottom: .75rem;
@@ -17294,7 +17297,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-header .card-title {
-  color: #ffffff;
+  color: black;
   font-weight: 100;
 }
 

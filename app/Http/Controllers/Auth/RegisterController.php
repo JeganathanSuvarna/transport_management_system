@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -49,16 +51,10 @@ class RegisterController extends Controller
      */
 
      public function register(){
-        return view('auth.register');
+        $roles=Role::where('status',1)->get();
+        return view('auth.register',compact('roles'));
      }
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
+   
 
     /**
      * Create a new user instance after a valid registration.
@@ -66,12 +62,45 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    public function registerUser(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $validator =Validator::make(
+            $request->all(), [
+            'first_name' => 'required|max:255',
+            'email' => 'required|email|unique:users',
+            'role' => 'required',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required|same:password',
+
+        ],
+        [
+            'first_name.required'                 => 'First Name is required',
+            'email.required'                 => 'Email is required',
+            'email.unique'                 => 'Email has already been taken',
+            'password.required'              => 'password is required',
+            'password.min'              => 'password should contain atleast 8 characters ',
+            'password_confirmation.required'              => 'password confirmation is required',
+            'password_confirmation.same'              => 'password and password confirmation should match ',
+            'role.required'                 => 'Please Select Role',
+
+
+
+        ]
+    );
+
+    if ($validator->fails()) {
+        return back()->withErrors($validator)->withInput();
+    }
+
+    $user=new User();
+    $user->first_name=$request->input('first_name');
+    $user->last_name=$request->input('last_name');
+    $user->email=$request->input('email');
+    $user->password=Hash::make($request->input('password'));
+    $user->save();
+    $user->assignRole($request->input('role'));
+    return redirect('/')->with('success', 'User Created Successfully.');
+
+
     }
 }

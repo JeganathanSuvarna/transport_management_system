@@ -22,11 +22,28 @@ Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'signIn
 Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
 Route::get('/signup', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'registerUser']);
+
 Route::middleware([Authenticate::class])->group(function () {
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['controller' => 'App\Http\Controllers\RolesController'], function () {
+    Route::get('permission/{id}', 'permission')->middleware('permission:Assign-Permissions');
+    Route::post('permission-store/{id}', 'permissionStore');
+Route::post('/roles/disable/{id}','activateRole');
+
+});
+Route::middleware(['permission:View-Role'])->group(function () {
+
 Route::resource('/roles', App\Http\Controllers\RolesController::class);
-Route::post('/roles/disable/{id}', [App\Http\Controllers\RolesController::class,'activateRole']);
+});
+
 Route::resource('/bus-info', App\Http\Controllers\BusInfoController::class);
+Route::resource('/route-info', App\Http\Controllers\RouteInfoController::class);
+Route::resource('/schedules', App\Http\Controllers\ScheduleController::class);
+Route::get('/reports', [App\Http\Controllers\ScheduleController::class,'reports'])->middleware('permission:View-reports');
+Route::post('/search', [App\Http\Controllers\ScheduleController::class,'search']);
+Route::get('/reports/download', [App\Http\Controllers\ScheduleController::class,'downloadPdf'])->middleware('permission:Download-reports');
+
 
 });

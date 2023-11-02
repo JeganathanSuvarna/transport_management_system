@@ -7,7 +7,7 @@
             <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h3 class="card-title">Add Bus Info</h3>
+                            <h3 class="card-title" style="color:black">Add Bus Info</h3>
                         </div>
                         <div class="col-4 text-right">
                             <a href="/bus-info" class="btn btn-sm btn-primary">Back to Bus Info</a>

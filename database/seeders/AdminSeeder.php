@@ -29,10 +29,19 @@ class AdminSeeder extends DatabaseSeeder
                 'module' => 'Roles',
 
                 'permissions' => [
+                    'Add-Role',
                     'View-Role',
                     'Edit-Role',
                     'Assign-Permissions'
 
+
+                ],
+            ],
+            [
+                'module' => 'Add New-bus',
+
+                'permissions' => [
+                    'Create-busdata2',
 
                 ],
             ],
@@ -47,6 +56,14 @@ class AdminSeeder extends DatabaseSeeder
                 ],
             ],
             [
+                'module' => 'Add New-route',
+
+                'permissions' => [
+                    'Create-route',
+
+                ],
+            ],
+            [
                 'module' => 'Route Info',
 
                 'permissions' => [
@@ -54,6 +71,14 @@ class AdminSeeder extends DatabaseSeeder
                     'View-routedata',
                     'Edit-routedata',
                     'Delete-routedata'
+                ],
+            ],
+            [
+                'module' => 'Add New-schedule',
+
+                'permissions' => [
+                    'Create-schedule',
+
                 ],
             ],
             [

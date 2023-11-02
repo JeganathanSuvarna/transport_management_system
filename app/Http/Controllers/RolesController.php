@@ -90,18 +90,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'name'                 => 'unique:roles',
-            ]
-           
-
-        );
-
-        if ($validator->fails()) {
-            return response()->json(['error'=>'create failed']);
-        }
+       
         $role=Role::find($id);
         $role->name=$request->name;
         $role->save();
@@ -129,5 +118,15 @@ class RolesController extends Controller
             $role->save();
             return response()->json('successfully enabled');
         } 
+    public function permission($id){
+        $role = Role::find($id);
+        return view('roles.permission', compact('role'));
+    }
+    public function permissionStore(Request $request, $id)
+    {
+        $role = Role::find($id);
+        $role->syncPermissions($request->input('permission'));
+        return redirect()->back();
+    }
     
 }
