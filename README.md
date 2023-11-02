@@ -15,3 +15,8 @@ system functionalties
 4. route informations CRUD
 5. schedule informations CRUD
 6. report generations
+
+
+Admin credentials
+Email:admin@admin.com
+password:password
