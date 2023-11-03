@@ -75,9 +75,17 @@ class BusInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function checkSchedules($id)
     {
-        //
+        $busInfo=Bus::find($id);
+        $schedules=$busInfo->schedules;
+        if(count($schedules)>=1){
+            return response()->json(['has'=>'yes']);
+        }
+        else{
+            return response()->json(['has'=>'no']);
+
+        }
     }
 
     /**
@@ -138,6 +146,11 @@ class BusInfoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bus=Bus::find($id);
+        $bus->schedules()->delete();
+        $bus->delete();
+        return response()->json([
+            'success'
+        ]);
     }
 }

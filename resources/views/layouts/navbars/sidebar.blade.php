@@ -123,6 +123,16 @@
 </div>
 </li>
 @endif
+
+@if($role->hasAnyPermission(['View-user']))
+<li>
+                <a href="/users">
+                    <i class="tim-icons icon-atom"></i>
+                    <p>User Management</p>
+                </a>
+            </li>
+
+@endif
         @if($role->hasAnyPermission(['View-reports', 'Download-reports']))
 
         <li>

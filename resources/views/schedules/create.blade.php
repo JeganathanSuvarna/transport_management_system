@@ -7,10 +7,10 @@
             <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h3 class="card-title" style="color:black">Add Bus Info</h3>
+                            <h3 class="card-title" style="color:black">Add Schedule</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="/schedules" class="btn btn-sm btn-primary">Back to Bus Info</a>
+                            <a href="/schedules" class="btn btn-sm btn-primary">Back to Schedules</a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <select class="form-control{{ $errors->has('route_id') ? ' is-invalid' : '' }}"  name="route_id">
-                        <option value="" selected>Select Bus</option>
+                        <option value="" selected>Select Route</option>
                             @foreach($routes as $route)
                             @if (old('route_id')==$route->id)
                         <option value="{{$route->id}}" selected>{{ $route->route_name }}</option>

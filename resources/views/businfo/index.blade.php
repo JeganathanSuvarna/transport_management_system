@@ -71,6 +71,31 @@
         </div>
     </div>
     
+    <div class="modal" tabindex="-1" id="checkSchedules">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title heading"></h3>
+      </div>
+      <div class="modal-body">
+          <div class="mb-3">
+            This Bus Info has Schedules. If you delete, all the schedules associated with the bus will delete. are you ok with that?
+          <input type="hidden" class="form-control bus_delete_id">
+
+
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary noCancel" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="yesDelete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -78,9 +103,52 @@
         $(document).ready(function() {
           $('.delete').on('click',function(){
             var bus_id=$(this).data('id');
+            $.ajax({
+                    type: 'GET',
+                    url: '/bus-info/checkschedules/'+bus_id ,
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    success: function(response) {
+                        if(response.has=='yes'){
+                            $("#checkSchedules").show();
+                            $(".bus_delete_id").val(bus_id);
+                        }
+                        else{
+
+                            $.ajax({
+                    type: 'DELETE',
+                    url: '/bus-info/'+bus_id ,
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    success: function(response) {                      
+                        location.reload();    
+                    }
+                });
+                        }
+                       
+                    }
+                });
           })
            
+          $('#yesDelete').on('click',function(){
+            var id=$(".bus_delete_id").val();
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/bus-info/'+id ,
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    success: function(response) {                      
+                        location.reload();    
+                    }
+                });
+          })
 
+          $(".noCancel").on('click',function(){
+            $("#checkSchedules").hide();
+          })
          
         })
     </script>

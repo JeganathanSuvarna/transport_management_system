@@ -39,11 +39,14 @@ Route::resource('/roles', App\Http\Controllers\RolesController::class);
 });
 
 Route::resource('/bus-info', App\Http\Controllers\BusInfoController::class);
+Route::get('/bus-info/checkschedules/{id}', [App\Http\Controllers\BusInfoController::class,'checkSchedules']);
 Route::resource('/route-info', App\Http\Controllers\RouteInfoController::class);
+Route::get('/route-info/checkschedules/{id}', [App\Http\Controllers\RouteInfoController::class,'checkSchedules']);
 Route::resource('/schedules', App\Http\Controllers\ScheduleController::class);
 Route::get('/reports', [App\Http\Controllers\ScheduleController::class,'reports'])->middleware('permission:View-reports');
 Route::post('/search', [App\Http\Controllers\ScheduleController::class,'search']);
 Route::get('/reports/download', [App\Http\Controllers\ScheduleController::class,'downloadPdf'])->middleware('permission:Download-reports');
+Route::resource('/users', App\Http\Controllers\UserController::class);
 
 
 });

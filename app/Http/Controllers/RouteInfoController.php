@@ -139,6 +139,24 @@ class RouteInfoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $route=Route::find($id);
+        $route->schedules()->delete();
+        $route->delete();
+        return response()->json([
+            'success'
+        ]);
+    }
+
+    public function checkSchedules($id)
+    {
+        $routeInfo=Route::find($id);
+        $schedules=$routeInfo->schedules;
+        if(count($schedules)>=1){
+            return response()->json(['has'=>'yes']);
+        }
+        else{
+            return response()->json(['has'=>'no']);
+
+        }
     }
 }

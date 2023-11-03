@@ -14,7 +14,8 @@ system functionalties
 3. bus informations CRUD
 4. route informations CRUD
 5. schedule informations CRUD
-6. report generations
+6. user management
+7. report generations
 
 
 Admin credentials
